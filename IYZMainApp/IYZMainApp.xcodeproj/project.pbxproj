@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CA8CCDC2872E38B00346AAF /* RKKeepAlive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCED59E28703387005A68E3 /* RKKeepAlive.framework */; platformFilter = ios; };
+		9CA8CCDD2872E38B00346AAF /* RKKeepAlive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCED59E28703387005A68E3 /* RKKeepAlive.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CCED56B287032AE005A68E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCED56A287032AE005A68E3 /* AppDelegate.m */; };
 		9CCED56E287032AE005A68E3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCED56D287032AE005A68E3 /* SceneDelegate.m */; };
 		9CCED571287032AE005A68E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCED570287032AE005A68E3 /* ViewController.m */; };
@@ -14,8 +16,6 @@
 		9CCED576287032B0005A68E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CCED575287032B0005A68E3 /* Assets.xcassets */; };
 		9CCED579287032B0005A68E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCED577287032B0005A68E3 /* LaunchScreen.storyboard */; };
 		9CCED57C287032B0005A68E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCED57B287032B0005A68E3 /* main.m */; };
-		9CCED5A6287036FA005A68E3 /* RKKeepAlive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCED59E28703387005A68E3 /* RKKeepAlive.framework */; platformFilter = ios; };
-		9CCED5AE28703E37005A68E3 /* KAResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9CCED5AD28703E37005A68E3 /* KAResource.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +27,20 @@
 			remoteInfo = RKKeepAlive;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9CA8CCDE2872E38B00346AAF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9CA8CCDD2872E38B00346AAF /* RKKeepAlive.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9CCED566287032AE005A68E3 /* IYZMainApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IYZMainApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,7 +56,6 @@
 		9CCED57A287032B0005A68E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CCED57B287032B0005A68E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9CCED59928703387005A68E3 /* RKKeepAlive.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RKKeepAlive.xcodeproj; path = ../../IYZFuncModule/RKKeepAlive/RKKeepAlive.xcodeproj; sourceTree = "<group>"; };
-		9CCED5AD28703E37005A68E3 /* KAResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KAResource.bundle; path = ../../IYZFuncModule/RKKeepAlive/RKKeepAlive/KAResource.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CCED5A6287036FA005A68E3 /* RKKeepAlive.framework in Frameworks */,
+				9CA8CCDC2872E38B00346AAF /* RKKeepAlive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +91,6 @@
 		9CCED568287032AE005A68E3 /* IYZMainApp */ = {
 			isa = PBXGroup;
 			children = (
-				9CCED5AD28703E37005A68E3 /* KAResource.bundle */,
 				9CCED569287032AE005A68E3 /* AppDelegate.h */,
 				9CCED56A287032AE005A68E3 /* AppDelegate.m */,
 				9CCED56C287032AE005A68E3 /* SceneDelegate.h */,
@@ -127,6 +139,7 @@
 				9CCED562287032AE005A68E3 /* Sources */,
 				9CCED563287032AE005A68E3 /* Frameworks */,
 				9CCED564287032AE005A68E3 /* Resources */,
+				9CA8CCDE2872E38B00346AAF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,7 +204,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CCED579287032B0005A68E3 /* LaunchScreen.storyboard in Resources */,
-				9CCED5AE28703E37005A68E3 /* KAResource.bundle in Resources */,
 				9CCED576287032B0005A68E3 /* Assets.xcassets in Resources */,
 				9CCED574287032AE005A68E3 /* Main.storyboard in Resources */,
 			);
@@ -363,6 +375,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunbao.rk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -392,6 +405,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunbao.rk;
 				PRODUCT_NAME = "$(TARGET_NAME)";

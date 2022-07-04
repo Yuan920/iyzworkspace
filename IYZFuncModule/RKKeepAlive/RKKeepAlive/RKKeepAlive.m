@@ -43,10 +43,23 @@ static RKKeepAlive *_keepInstance = nil;
 - (AVAudioPlayer *)player {
     if (!_player) {
         NSError *error = nil;
-        //NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"mute-mp3" withExtension:@"mp3"];
+        
+        // m-1 需要将.mp3导入主工程
+        /*
+        NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"mute-mp3" withExtension:@"mp3"];
+        */
+        
+        // m-2 需要将.bundle导入主工程
+        /*
         NSString *rkBundle = [[NSBundle mainBundle] pathForResource:@"KAResource" ofType:@"bundle"];
         NSString *rkResource = [rkBundle stringByAppendingPathComponent:@"image"];
         NSString *mp3File = [rkResource stringByAppendingPathComponent:@"mute-mp3.mp3"];
+        */
+        
+        // m-3 直接加载framework的资源【得是动态库】
+        NSBundle *rkBundle = [NSBundle bundleForClass:[RKKeepAlive class]];
+        NSString *rkResource = [rkBundle pathForResource:@"KAResource" ofType:@"bundle"];
+        NSString *mp3File = [rkResource stringByAppendingPathComponent:@"image/mute-mp3.mp3"];
         if (!mp3File && _showConsoleLog) {
             NSString *des = [NSString stringWithFormat:@"%s File path cannot be empty!",__FUNCTION__];
             NSAssert(mp3File,des);

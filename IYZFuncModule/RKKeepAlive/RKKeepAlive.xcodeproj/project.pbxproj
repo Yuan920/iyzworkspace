@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CA7E49A28729A85002BC871 /* KAResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9CA7E49928729A85002BC871 /* KAResource.bundle */; };
 		9CCED5912870330F005A68E3 /* RKKeepAlive.docc in Sources */ = {isa = PBXBuildFile; fileRef = 9CCED5902870330F005A68E3 /* RKKeepAlive.docc */; };
 		9CCED5A128703526005A68E3 /* RKKeepAlive.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CCED59F28703526005A68E3 /* RKKeepAlive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CCED5A228703526005A68E3 /* RKKeepAlive.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCED5A028703526005A68E3 /* RKKeepAlive.m */; };
-		9CCED5AC28703DEC005A68E3 /* KAResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9CCED5AB28703DEC005A68E3 /* KAResource.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9CA7E49928729A85002BC871 /* KAResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KAResource.bundle; sourceTree = "<group>"; };
 		9CCED58C2870330F005A68E3 /* RKKeepAlive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RKKeepAlive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CCED5902870330F005A68E3 /* RKKeepAlive.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = RKKeepAlive.docc; sourceTree = "<group>"; };
 		9CCED59F28703526005A68E3 /* RKKeepAlive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKKeepAlive.h; sourceTree = "<group>"; };
 		9CCED5A028703526005A68E3 /* RKKeepAlive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKKeepAlive.m; sourceTree = "<group>"; };
-		9CCED5AB28703DEC005A68E3 /* KAResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KAResource.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 				9CCED59F28703526005A68E3 /* RKKeepAlive.h */,
 				9CCED5A028703526005A68E3 /* RKKeepAlive.m */,
 				9CCED5902870330F005A68E3 /* RKKeepAlive.docc */,
-				9CCED5AB28703DEC005A68E3 /* KAResource.bundle */,
+				9CA7E49928729A85002BC871 /* KAResource.bundle */,
 			);
 			path = RKKeepAlive;
 			sourceTree = "<group>";
@@ -128,7 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CCED5AC28703DEC005A68E3 /* KAResource.bundle in Resources */,
+				9CA7E49A28729A85002BC871 /* KAResource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +281,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunbao.rk.RKKeepAlive;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -310,7 +310,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunbao.rk.RKKeepAlive;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
