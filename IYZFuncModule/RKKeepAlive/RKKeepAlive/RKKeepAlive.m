@@ -16,6 +16,7 @@ static RKKeepAlive *_keepInstance = nil;
     int _runningTime;
     NSTimer *_testTimer;
     BOOL _showConsoleLog;
+    BOOL _showVerboseLog;
 }
 @property (nonatomic, assign) UIBackgroundTaskIdentifier backgroundTaskIdentifier;
 @property(nonatomic,assign)BOOL needKeepAliveInBackground;
@@ -170,6 +171,9 @@ static RKKeepAlive *_keepInstance = nil;
 -(void)showLog:(BOOL)showLog;{
     _showConsoleLog = showLog;
 }
+- (void)showVerboseLog:(BOOL)verboseLog {
+    _showVerboseLog = verboseLog;
+}
 /// 弹窗
 -(void)showRunTime{
     if (_showConsoleLog == NO) {
@@ -193,12 +197,24 @@ static RKKeepAlive *_keepInstance = nil;
         
     }];
     [alertVC addAction:sureAction];
+    if (_showConsoleLog) {
+        NSLog(@"%s:当前控制器:%@",__FUNCTION__,[self topViewController]);
+        if (_showVerboseLog && ![self topViewController]) {
+            NSLog(@"%s:请检查当前控制器是否有navigation",__FUNCTION__);
+        }
+    }
     [[self topViewController] presentViewController:alertVC animated:YES completion:nil];
     
 }
 
 - (UIViewController *)topViewController {
     UINavigationController *nav = [self navigationViewController];
+    if (!nav) {
+        if (_showVerboseLog) {
+            NSLog(@"\n[iyz==>nav 不存在:\n<==iyz]");
+        }
+        return nil;
+    }
     return nav.topViewController;
 }
 - (UINavigationController *)navigationViewController{
@@ -217,27 +233,27 @@ static RKKeepAlive *_keepInstance = nil;
     if (@available(iOS 13.0,*)) {
         for (UIWindowScene* windowScene in [UIApplication sharedApplication].connectedScenes) {
             if (windowScene.activationState == UISceneActivationStateForegroundActive) {
-                if (_showConsoleLog) {
-                    NSLog(@"get active ==:%@",windowScene.windows);
+                if (_showVerboseLog) {
+                    NSLog(@"\n[iyz==>:get active ==:%@\n<==iyz]",windowScene.windows);
                 }
                 for (UIView *view in windowScene.windows) {
                     if ([view isKindOfClass:[UIWindow class]]) {
                         UIWindow *window = (UIWindow *)view;
-                        if (_showConsoleLog) {
-                            NSLog(@"find ==>");
+                        if (_showVerboseLog) {
+                            NSLog(@"\n[iyz==>:find ==>\n<==iyz]");
                         }
                         return window;
                     }
                 }
             }else if (windowScene.activationState == UISceneActivationStateForegroundInactive) {
-                if (_showConsoleLog) {
-                    NSLog(@"get inactive ==:%@",windowScene.windows);
+                if (_showVerboseLog) {
+                    NSLog(@"\n[iyz==>:get inactive ==:%@\n<==iyz]",windowScene.windows);
                 }
                 for (UIView *view in windowScene.windows) {
                     if ([view isKindOfClass:[UIWindow class]]) {
                         UIWindow *window = (UIWindow *)view;
-                        if (_showConsoleLog) {
-                            NSLog(@"find ==>");
+                        if (_showVerboseLog) {
+                            NSLog(@"\n[iyz==>:find ==>\n<==iyz]");
                         }
                         return window;
                     }

@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9CA8CCDC2872E38B00346AAF /* RKKeepAlive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCED59E28703387005A68E3 /* RKKeepAlive.framework */; platformFilter = ios; };
-		9CA8CCDD2872E38B00346AAF /* RKKeepAlive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCED59E28703387005A68E3 /* RKKeepAlive.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9C1B44452897AFD80036DE09 /* RKKeepAlive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCED59E28703387005A68E3 /* RKKeepAlive.framework */; };
+		9C1B44462897B00C0036DE09 /* RKKeepAlive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCED59E28703387005A68E3 /* RKKeepAlive.framework */; };
+		9CA8CCDC2872E38B00346AAF /* RKKeepAlive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCED59E28703387005A68E3 /* RKKeepAlive.framework */; };
+		9CA8CCDD2872E38B00346AAF /* RKKeepAlive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCED59E28703387005A68E3 /* RKKeepAlive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CCED56B287032AE005A68E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCED56A287032AE005A68E3 /* AppDelegate.m */; };
 		9CCED56E287032AE005A68E3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCED56D287032AE005A68E3 /* SceneDelegate.m */; };
 		9CCED571287032AE005A68E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCED570287032AE005A68E3 /* ViewController.m */; };
@@ -63,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C1B44452897AFD80036DE09 /* RKKeepAlive.framework in Frameworks */,
+				9C1B44462897B00C0036DE09 /* RKKeepAlive.framework in Frameworks */,
 				9CA8CCDC2872E38B00346AAF /* RKKeepAlive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -31,6 +31,7 @@
     [notiCenter addObserver:self selector:@selector(appActive) name:UIApplicationDidBecomeActiveNotification object:nil];
 
     [[RKKeepAlive sharedKeepInstance] showLog:YES];
+    [[RKKeepAlive sharedKeepInstance] showVerboseLog:YES];
     [[RKKeepAlive sharedKeepInstance] startAppLifeCycleMonitor];
 
 }
