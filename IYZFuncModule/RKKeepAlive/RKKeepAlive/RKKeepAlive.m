@@ -46,23 +46,23 @@ static RKKeepAlive *_keepInstance = nil;
         
         // m-1 需要将.mp3导入主工程
         /*
-        NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"mute-mp3" withExtension:@"mp3"];
-        */
+         NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"mute-mp3" withExtension:@"mp3"];
+         */
         
         // m-2 需要将.bundle导入主工程
         /*
-        NSString *rkBundle = [[NSBundle mainBundle] pathForResource:@"KAResource" ofType:@"bundle"];
-        NSString *rkResource = [rkBundle stringByAppendingPathComponent:@"image"];
-        NSString *mp3File = [rkResource stringByAppendingPathComponent:@"mute-mp3.mp3"];
-        */
+         NSString *rkBundle = [[NSBundle mainBundle] pathForResource:@"KAResource" ofType:@"bundle"];
+         NSString *rkResource = [rkBundle stringByAppendingPathComponent:@"image"];
+         NSString *mp3File = [rkResource stringByAppendingPathComponent:@"mute-mp3.mp3"];
+         */
         
         // m-3 直接加载framework的资源【得是动态库】
         NSBundle *rkBundle = [NSBundle bundleForClass:[RKKeepAlive class]];
         NSString *rkResource = [rkBundle pathForResource:@"KAResource" ofType:@"bundle"];
         NSString *mp3File = [rkResource stringByAppendingPathComponent:@"image/mute-mp3.mp3"];
         if (!mp3File && _showConsoleLog) {
-            NSString *des = [NSString stringWithFormat:@"%s File path cannot be empty!",__FUNCTION__];
-            NSAssert(mp3File,des);
+            //NSString *des = [NSString stringWithFormat:@"%s File path cannot be empty!",__FUNCTION__];
+            NSAssert(mp3File,@"File path cannot be empty!");
         }
         NSURL *fileURL = [NSURL fileURLWithPath:mp3File];
         //NSLog(@"bundle:%@\nfile:%@\nUrl:%@",rkBundle,mp3File,fileURL);
@@ -217,18 +217,28 @@ static RKKeepAlive *_keepInstance = nil;
     if (@available(iOS 13.0,*)) {
         for (UIWindowScene* windowScene in [UIApplication sharedApplication].connectedScenes) {
             if (windowScene.activationState == UISceneActivationStateForegroundActive) {
-                //NSLog(@"get active ==:%@",windowScene.windows);
+                if (_showConsoleLog) {
+                    NSLog(@"get active ==:%@",windowScene.windows);
+                }
                 for (UIView *view in windowScene.windows) {
                     if ([view isKindOfClass:[UIWindow class]]) {
                         UIWindow *window = (UIWindow *)view;
+                        if (_showConsoleLog) {
+                            NSLog(@"find ==>");
+                        }
                         return window;
                     }
                 }
             }else if (windowScene.activationState == UISceneActivationStateForegroundInactive) {
-                //NSLog(@"get inactive ==:%@",windowScene.windows);
+                if (_showConsoleLog) {
+                    NSLog(@"get inactive ==:%@",windowScene.windows);
+                }
                 for (UIView *view in windowScene.windows) {
                     if ([view isKindOfClass:[UIWindow class]]) {
                         UIWindow *window = (UIWindow *)view;
+                        if (_showConsoleLog) {
+                            NSLog(@"find ==>");
+                        }
                         return window;
                     }
                 }
